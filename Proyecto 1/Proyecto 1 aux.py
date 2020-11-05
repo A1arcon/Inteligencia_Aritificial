@@ -11,6 +11,7 @@ import pandas as pd
 import matplotlib
 import matplotlib.pyplot as plt
 import math
+import seaborn as sns
 from sklearn.linear_model import Lasso 
 from sklearn.linear_model import Ridge
 from sklearn.linear_model import LinearRegression
@@ -37,6 +38,8 @@ caxes = axes.matshow(train.corr())
 figure.colorbar(caxes) 
 # Hacemos el gráfico  
 plt.show() 
+
+sns.heatmap(train.corr())
 
 MC=train.corr()
 #type(MC)
@@ -83,7 +86,7 @@ axes.set_yticklabels(train_selec.columns.insert(0,0))
 # Hacemos el gráfico  
 plt.show() 
 
-# Ponemos las variables respusta en X
+# Ponemos las variables respuesta en X
 X = train_selec.drop(columns=['SalePrice'])
 y = train_selec['SalePrice']
 
@@ -93,16 +96,24 @@ y = train_selec['SalePrice']
 linear_model = LinearRegression(normalize=False,fit_intercept=True)
 linear_model.fit(X,y)
 y_linear=linear_model.predict(X)
+aux=stats.describe(y_linear)
+df = pd.DataFrame([aux], columns=aux._fields)
+df.round(3)
 
 # Lasso
 lasso_model = Lasso(alpha=0.5,normalize=True, max_iter=1e6)
 lasso_model.fit(X,y)
 y_lasso=lasso_model.predict(X)
+stats.describe(y_lasso)
 
 # Ridge
 ridge_model = Ridge(alpha=0.5)
 ridge_model.fit(X,y) 
 y_ridge=ridge_model.predict(X)
+stats.describe(y_ridge)
+aux=ridge_model.coef_
+df = pd.DataFrame([aux],columns=X.columns)
+df.round(3)
 
 # Preparamos la información que deseamos predecir. ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -219,12 +230,31 @@ plt.legend(loc='best', frameon=False)
 plt.show()
 
 
+# Comparativa de modelos ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Graficamos
 plt.scatter(y_linear,y_lasso)
 plt.plot(y_linear, y_linear, '-',color="red",label="Recta Identidad")
-plt.title('Test - Modelo ridge')
-plt.xlabel('y')
-plt.ylabel('y.gorro')
+plt.title('Comparativo de Modelos: Lineal Vs. Lasso')
+plt.xlabel('Lineal')
+plt.ylabel('Lasso')
+plt.legend(loc='best', frameon=False)
+plt.show()
+
+# Graficamos
+plt.scatter(y_linear,y_ridge)
+plt.plot(y_linear, y_linear, '-',color="red",label="Recta Identidad")
+plt.title('Comparativo de Modelos: Lineal Vs. Ridge')
+plt.xlabel('Lineal')
+plt.ylabel('Ridge')
+plt.legend(loc='best', frameon=False)
+plt.show()
+
+# Graficamos
+plt.scatter(y_lasso,y_ridge)
+plt.plot(y_lasso, y_lasso, '-',color="red",label="Recta Identidad")
+plt.title('Comparativo de Modelos: Lasso Vs. Ridge')
+plt.xlabel('Lasso')
+plt.ylabel('Ridge')
 plt.legend(loc='best', frameon=False)
 plt.show()
