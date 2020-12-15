@@ -9,6 +9,6 @@
 
 ## [Proyecto 2 - Modelos Mecanísticos](https://github.com/A1arcon/Inteligencia_Aritificial/tree/main/Proyecto%202)
 
-- [Código](https://github.com/A1arcon/Inteligencia_Aritificial/blob/main/Proyecto%202/Proyecto%202%20Edgar.ipynb)
+- [Código](https://github.com/A1arcon/Inteligencia_Aritificial/blob/main/Proyecto%202/Proyecto_2_Edgar.ipynb)
 
 - [Reporte](https://github.com/A1arcon/Inteligencia_Aritificial/blob/main/Proyecto%202/Proyecto_2_Edgar.pdf)
