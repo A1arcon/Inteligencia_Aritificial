@@ -12,3 +12,9 @@
 - [Código](https://github.com/A1arcon/Inteligencia_Aritificial/blob/main/Proyecto%202/Proyecto_2_Edgar.ipynb)
 
 - [Reporte](https://github.com/A1arcon/Inteligencia_Aritificial/blob/main/Proyecto%202/Proyecto_2_Edgar.pdf)
+
+## [Examen Final](https://github.com/A1arcon/Inteligencia_Aritificial/tree/main/Examen%20Final)
+
+- [Código](https://github.com/A1arcon/Inteligencia_Aritificial/blob/main/Examen%20Final/Examen%20Final.ipynb)
+
+- [Reporte](https://github.com/A1arcon/Inteligencia_Aritificial/blob/main/Examen%20Final/Examen%20Final.pdf)
