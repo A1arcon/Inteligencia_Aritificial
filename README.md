@@ -18,3 +18,5 @@
 - [Código](https://github.com/A1arcon/Inteligencia_Aritificial/blob/main/Examen%20Final/Examen%20Final.ipynb)
 
 - [Reporte](https://github.com/A1arcon/Inteligencia_Aritificial/blob/main/Examen%20Final/Examen%20Final.pdf)
+
+- [HTML](https://github.com/A1arcon/Inteligencia_Aritificial/blob/main/Examen%20Final/Examen%20Final.html)
